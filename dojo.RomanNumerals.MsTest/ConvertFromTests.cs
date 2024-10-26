@@ -3,16 +3,6 @@ namespace dojo.RomanNumerals.MsTest
 	[TestClass]
 	public class ConvertFromTests
 	{
-		[DataRow("")]
-		[TestMethod]
-		public void ConvertFromTests_ArgumentNullException(string numerals)
-		{
-			// Act
-			Action act = () => numerals.FromRomanNumerals();
-			// Assert
-			Assert.ThrowsException<ArgumentNullException>(act);
-		}
-
 		[DataRow("ACD")]
 		[DataRow("MCM LXXXIV")]
 		[DataRow("MCi")]
@@ -29,6 +19,7 @@ namespace dojo.RomanNumerals.MsTest
 			Assert.ThrowsException<ArgumentOutOfRangeException>(act);
 		}
 
+		[DataRow("", 0)]
 		[DataRow("I", 1)]
 		[DataRow("V", 5)]
 		[DataRow("X", 10)]
